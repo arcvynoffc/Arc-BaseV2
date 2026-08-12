@@ -58,7 +58,10 @@ const botNumber = jidNormalizedUser(sock.user.id);
 const ownerNumber = cfg.owner;
 const Premium = JSON.parse(fs.readFileSync('./database/premium.json'));
 const isPremium = Premium.includes(sender);
-const isOwner = ownerNumber.includes(sender) || m.key.fromMe;
+const isOwner = ownerNumber.some(number => {
+    const ownerJid = number.includes('@') ? number : `${number}@s.whatsapp.net`;
+    return ownerJid === sender;
+}) || m.key.fromMe;
 const groupMetadata = isGroup ? await sock.groupMetadata(m.chat).catch(() => null) : null;
 const groupName = groupMetadata ? groupMetadata.subject : '';
 const participants = groupMetadata ? groupMetadata.participants : [];
