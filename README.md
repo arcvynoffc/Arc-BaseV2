@@ -2,7 +2,7 @@
   <img src="https://files.catbox.moe/3njq3m.png" width="500">
 </p>
 
-<h2 align="center">Creator</h2>
+<h2 align="center">CONTACT</h2>
 
 <p align="center">
   <a href="https://wa.me/628998052763">
