@@ -377,6 +377,36 @@ case 'public': {
 }
 break
 
+case 'owner':
+case 'creator': {
+    let contacts = [];
+    
+    for (let jid of cfg.owner) {
+        let number = jid.split('@')[0];
+        let vcard = [
+            'BEGIN:VCARD',
+            'VERSION:3.0',
+            `FN:${cfg.ownerName}`,
+            `ORG:${cfg.BotName}`,
+            `TEL;type=CELL;type=VOICE;waid=${number}:+${number}`,
+            'END:VCARD'
+        ].join('\n');
+
+        contacts.push({
+            displayName: cfg.ownerName,
+            vcard: vcard
+        });
+    }
+
+    await sock.sendMessage(m.chat, {
+        contacts: {
+            displayName: `Owner ${cfg.BotName}`,
+            contacts: contacts
+        }
+    }, { quoted: m });
+}
+break;
+
 default:
 if (body.startsWith('=>') && isOwner) {
 try {
