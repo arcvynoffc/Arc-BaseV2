@@ -1,9 +1,15 @@
+```md
 <p align="center">
   <img src="https://files.catbox.moe/3njq3m.png" width="500">
 </p>
 
-# Creator
+<h2 align="center">Creator</h2>
 
-```text
-WhatsApp : https://wa.me/628998052763
-Telegram : https://t.me/ArcvynX
+<p align="center">
+  <a href="https://wa.me/628998052763">
+    <img src="https://img.shields.io/badge/WhatsApp-Contact-25D366?style=for-the-badge&logo=whatsapp&logoColor=white">
+  </a>
+  <a href="https://t.me/ArcvynX">
+    <img src="https://img.shields.io/badge/Telegram-Contact-26A5E4?style=for-the-badge&logo=telegram&logoColor=white">
+  </a>
+</p>
