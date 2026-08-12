@@ -11,4 +11,7 @@
   <a href="https://t.me/ArcvynX">
     <img src="https://img.shields.io/badge/Telegram-Contact-26A5E4?style=for-the-badge&logo=telegram&logoColor=white">
   </a>
+  <a href="https://t.me/FunctionBugWhatsApp">
+    <img src="https://img.shields.io/badge/Telegram-Channel-26A5E4?style=for-the-badge&logo=telegram&logoColor=white">
+  </a>
 </p>
