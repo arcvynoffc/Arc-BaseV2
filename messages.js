@@ -52,15 +52,18 @@ const args = body.trim().split(/ +/).slice(1);
 const text = args.join(" ");
 const q = text;
 const isGroup = m.chat.endsWith('@g.us');
-const sender = m.key.fromMe ? jidNormalizedUser(sock.user.id) : (m.key.participant || m.chat);
+const sender = m.key.fromMe 
+    ? jidNormalizedUser(sock.user.id) 
+    : jidNormalizedUser(m.key.participant || m.chat);
 const pushname = m.pushName || "Anonymous";
 const botNumber = jidNormalizedUser(sock.user.id);
 const ownerNumber = cfg.owner;
 const Premium = JSON.parse(fs.readFileSync('./database/premium.json'));
 const isPremium = Premium.includes(sender);
 const isOwner = ownerNumber.some(number => {
-    const ownerJid = number.includes('@') ? number : `${number}@s.whatsapp.net`;
-    return ownerJid === sender;
+    const cleanOwner = number.replace(/[^0-9]/g, '');
+    const cleanSender = sender.replace(/[^0-9]/g, '');
+    return cleanOwner === cleanSender;
 }) || m.key.fromMe;
 const groupMetadata = isGroup ? await sock.groupMetadata(m.chat).catch(() => null) : null;
 const groupName = groupMetadata ? groupMetadata.subject : '';
