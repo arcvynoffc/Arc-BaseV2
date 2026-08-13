@@ -98,7 +98,7 @@ async function startBot() {
         try {
             const mek = chatUpdate.messages[0];
             if (!mek || !mek.message) return;
-            if (!sock.public && !mek.key.fromMe && chatUpdate.type === "notify") return;
+            
             const m = smsg(sock, mek);
             require("./messages")(sock, m, chatUpdate);
         } catch (err) {
