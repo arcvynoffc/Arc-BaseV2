@@ -2,6 +2,14 @@
   <img src="https://files.catbox.moe/3njq3m.png" width="500">
 </p>
 
+<h2 align="center">HOW TO INSTALL</h2>
+
+```
+git clone https://github.com/arcvynoffc/Arc-BaseV2.git
+cd Arc-Base
+npm i
+```
+
 <h2 align="center">CONTACT</h2>
 
 <p align="center">
